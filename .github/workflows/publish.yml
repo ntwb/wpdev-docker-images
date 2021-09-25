@@ -74,11 +74,13 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@a66e35b9cbcf4ad0ea91ffcaf7bbad63ad9e0229 # v2.7.0
         with:
-          context: .
+          build-args: |
+            PR_TAG=$PR_TAG
+          context: images/$PHP_VERSION/php
           platforms: linux/amd64,linux/arm64
           push: false
           tags: |
-            netweb/app:latest
+            netweb/app:$PHP_VERSION-latest
             netweb/php:$PHP_VERSION-fpm$PR_TAG
-            ghcr.io/ntwb/app:latest
+            ghcr.io/ntwb/app:$PHP_VERSION-latest
             ghcr.io/ntwb/php:$PHP_VERSION-fpm$PR_TAG
