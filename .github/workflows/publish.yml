@@ -77,7 +77,9 @@ jobs:
           build-args: |
             PR_TAG=$PR_TAG
           context: images/${{ matrix.php }}/php
-          platforms: linux/amd64,linux/arm64
+          platforms: |
+            linux/amd64
+            linux/arm64/v8
           push: true
           tags: |
             netweb/app:${{ matrix.php }}-latest
