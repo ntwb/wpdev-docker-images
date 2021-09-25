@@ -38,6 +38,7 @@ jobs:
   build-php-images:
     name: PHP ${{ matrix.php }} Image
     runs-on: ubuntu-latest
+    needs: [ check-for-changes ]
 
     strategy:
       matrix:
