@@ -56,6 +56,6 @@ jobs:
           push: false
           tags: |
             netweb/app:latest
-            netweb/php:$PHP_VERSION-fpm$PR_TAG
+            netweb/php:$PHP_VERSION-fpm
             ghcr.io/ntwb/app:latest
-            ghcr.io/ntwb/php:$PHP_VERSION-fpm$PR_TAG
+            ghcr.io/ntwb/php:$PHP_VERSION-fpm
