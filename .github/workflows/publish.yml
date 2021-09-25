@@ -76,11 +76,11 @@ jobs:
         with:
           build-args: |
             PR_TAG=$PR_TAG
-          context: images/$PHP_VERSION/php
+          context: images/${{ matrix.php }}/php
           platforms: linux/amd64,linux/arm64
           push: false
           tags: |
-            netweb/app:$PHP_VERSION-latest
-            netweb/php:$PHP_VERSION-fpm$PR_TAG
-            ghcr.io/ntwb/app:$PHP_VERSION-latest
-            ghcr.io/ntwb/php:$PHP_VERSION-fpm$PR_TAG
+            netweb/app:${{ matrix.php }}-latest
+            netweb/php:${{ matrix.php }}-fpm
+            ghcr.io/ntwb/app:${{ matrix.php }}-latest
+            ghcr.io/ntwb/php:${{ matrix.php }}-fpm
