@@ -78,7 +78,7 @@ jobs:
             PR_TAG=$PR_TAG
           context: images/${{ matrix.php }}/php
           platforms: linux/amd64,linux/arm64
-          push: false
+          push: true
           tags: |
             netweb/app:${{ matrix.php }}-latest
             netweb/php:${{ matrix.php }}-fpm
